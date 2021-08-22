@@ -19,11 +19,11 @@
 -------
 
 Используемые технологии:
-.NET 5
-ASP.NET
-AutoMapper
-AutoFac
-Nginx
+- .NET 5
+- ASP.NET
+- AutoMapper
+- AutoFac
+- Nginx
 
 -------
 
