@@ -51,6 +51,10 @@ namespace karachun_alice.BI.Services
                 Active = WhereGoInNovgorod
             });
             CommandsList[CommandsList.Count - 1].AddInSubCommandYourself();
+            CommandsList.Add(new Command("Хочу больше!", new List<Command>() { CommandsList[3], start }, close)
+            {
+                Active = GetApp
+            });
         }
 
         public async Task<AliceResponseDto> Execute(string command) =>
@@ -66,6 +70,12 @@ namespace karachun_alice.BI.Services
         private AliceResponseDto GetLegend() => new AliceResponseDto()
         {
             Text = GetRandomLegend(),
+            Buttons = CommandsList[2]?.GetButtons().Select(command => new AliceButtonModel(command, true)).ToList()
+        };
+
+        private AliceResponseDto GetApp() => new AliceResponseDto()
+        {
+            Text = "Хотите посетить больше интересных мест и погрузиться в фольклёр нашего региона? Скачайте наше приложение: http://95.142.47.217:2867/Attachment/98",
             Buttons = CommandsList[2]?.GetButtons().Select(command => new AliceButtonModel(command, true)).ToList()
         };
 

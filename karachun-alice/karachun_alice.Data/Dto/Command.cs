@@ -40,6 +40,14 @@ namespace karachun_alice.Data.Dto
             AddCallingCommands(callingCommands);
         }
 
+        public Command(string command, List<Command> callingCommands, Command canselCommand)
+        {
+            CommandText = command;
+            AddCallingCommands(callingCommands);
+
+            AddSubCommand(canselCommand);
+        }
+
         public IEnumerable<string> GetButtons() => SubCommands.Select(x => x.CommandText);
 
         public void AddCallingCommand(Command callingCommand)
