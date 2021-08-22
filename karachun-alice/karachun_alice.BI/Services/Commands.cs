@@ -75,7 +75,7 @@ namespace karachun_alice.BI.Services
 
         private AliceResponseDto GetApp() => new AliceResponseDto()
         {
-            Text = "Хотите посетить больше интересных мест и погрузиться в фольклёр нашего региона? Скачайте наше приложение: http://95.142.47.217:2867/Attachment/98",
+            Text = "Хотите посетить больше интересных мест и погрузиться в фольклёр нашего региона? Скачайте наше приложение: http://95.142.47.217:2867/Attachment/100",
             Buttons = CommandsList[2]?.GetButtons().Select(command => new AliceButtonModel(command, true)).ToList()
         };
 
